@@ -198,7 +198,7 @@ text-align: center;
     st.sidebar.header(" ")
 
     with st.sidebar.container():
-        image = Image.open(r"C:\Users\kevin\0_projet_satisfaction_client\10_Streamlit\satisfaction_client_image.png")
+        image = Image.open("satisfaction_client_image.png")
      
         st.image(image, use_column_width=True)
         
@@ -283,7 +283,7 @@ text-align: center;
         ## Data#
         with st.spinner('Updating Report...'):
             #Metrics setting and rendering
-            df = pd.read_csv(r"C:\Users\kevin\0_projet_satisfaction_client\codes_finaux\reviews_trust.csv")
+            df = pd.read_csv("reviews_trust.csv")
             st.write("- Nombre d'observations : 19863")
             st.write("- Nombre d'attributs :  11")
             row3_spacer1, row3_1, row3_spacer2 = st.columns((.2, 7.1, .2))
@@ -363,7 +363,7 @@ text-align: center;
         st.set_option('deprecation.showPyplotGlobalUse', False)
         # Create some sample text
         
-        #df = pd.read_csv(r"C:\Users\selma\Desktop\Projet satisfaction Client\reviews_trust.csv")  
+        #df = pd.read_csv("reviews_trust.csv")  
         
         # Definition d'une fonction de filtrage de stopwords
         def stopwords_filtering(chaine):
@@ -391,7 +391,7 @@ text-align: center;
         
  #######
 #graph binaire           
-        df = pd.read_csv("/Users/kevin/0_projet_satisfaction_client/10_Streamlit/reviews_trust.csv")
+        df = pd.read_csv("reviews_trust.csv")
         df = df[["Commentaire", "star"]]
         df["Sentiment"] = df["star"].apply(lambda x : np.where(x >=4 , 1 , 0))
         sns.countplot(df.Sentiment);
@@ -439,7 +439,7 @@ text-align: center;
         with g4:
             
             st.subheader("Nuage de mots des commentaires positifs") 
-            wc_good_comments = plot_word_cloud_pos(commentaires_positifs, "C:/Users/kevin/0_projet_satisfaction_client/10_Streamlit/pouce_bon.png")
+            wc_good_comments = plot_word_cloud_pos(commentaires_positifs, "pouce_bon.png")
             st.pyplot(wc_good_comments)  
             
         
@@ -447,7 +447,7 @@ text-align: center;
             st.subheader("Nuage de mots des commentaires négatifs") 
             st.markdown(" ")
             
-            wc_bad_comments = plot_word_cloud_neg(commentaires_negatifs, "C:/Users/kevin/0_projet_satisfaction_client/10_Streamlit/pouce_mauvais.png")
+            wc_bad_comments = plot_word_cloud_neg(commentaires_negatifs, "pouce_mauvais.png")
             st.pyplot(wc_bad_comments)
         
         st.write("---")
@@ -493,7 +493,7 @@ text-align: center;
             #####################################################################
             row4_spacer1, row4_1, row4_spacer2 = st.columns((.7, 7, .7))
             with row4_1: 
-                image = Image.open("/Users/kevin/0_projet_satisfaction_client/10_Streamlit/pipeline_preprocessing.png")
+                image = Image.open("pipeline_preprocessing.png")
                 st.image(image, caption='Pipeline de prétraitement des données',width =1150)
                 st.text('')
                 st.text('')
@@ -502,7 +502,7 @@ text-align: center;
         if option == 'APPROCHES PROPOSEES' :    
             row4_spacer1, row4_1, row4_spacer2 = st.columns((.7, 7, .7))
             with row4_1:        
-                image = Image.open("/Users/kevin/0_projet_satisfaction_client/10_Streamlit/methode.png")
+                image = Image.open("/methode.png")
                 st.image(image)
          ####################################################################
             explication_modèles = st.expander('Schéma des modèles de plongement lexicaux et plongement de document 👉🏼 ')
@@ -510,17 +510,17 @@ text-align: center;
                 row4_spacer1, row, row4_spacer2 = st.columns((6, 7, 7))
                 with row4_spacer1:
                     st.write("Word2vec- skip-gram")
-                    image = Image.open(r"C:/Users/kevin/0_projet_satisfaction_client/10_Streamlit/Word2vec skipgram.png")
+                    image = Image.open("Word2vec skipgram.png")
                     st.image(image)
                     
                 with row:
                     st.write("Doc2Vec Paragraph Vector - Distributed Bag of words (PV-DBOW)")
-                    image = Image.open(r"C:/Users/kevin/0_projet_satisfaction_client/10_Streamlit/PV-DBOW.png")
+                    image = Image.open("PV-DBOW.png")
                     st.image(image)
                     
                 with row4_spacer2:
                     st.write("Doc2Vec Paragraph Vector - Distributed Memory Model (PV-DMM)")
-                    image = Image.open(r"C:/Users/kevin/0_projet_satisfaction_client/10_Streamlit/PV-DM.png")
+                    image = Image.open("PV-DM.png")
                     st.image(image)
                     
                     
@@ -530,14 +530,14 @@ text-align: center;
             with row:        
                 st.markdown(" Deux méthodes de traitement des commentaires ")
                 st.text("1) Commentaires considérés dans leur intégralité \n2) Commentaires découpés en phrases" )
-                image = Image.open(r"C:\Users\kevin\0_projet_satisfaction_client\10_Streamlit/découpage phrase.png")
+                image = Image.open("découpage phrase.png")
                 st.image(image)
             
             row4_spacer1, row, row4_spacer2 = st.columns((.7, 7, .7))   
             with row:        
                 st.markdown(" Vectorisation : déclinaison des méthodes par comptage directe , BOW et TF-IDF ")
                 st.text("1) Vectorisation générant uniquement des unigrammes \n2) Vectorisation générant des unigrammes et bigrammes")
-                image = Image.open(r"C:\Users\kevin\0_projet_satisfaction_client\10_Streamlit/coocurrence.png")
+                image = Image.open("coocurrence.png")
                 st.image(image)
             
         
@@ -676,12 +676,12 @@ text-align: center;
                 st.markdown(" ")
                 st.markdown(" ")
                 
-                image = Image.open(r"C:/Users/kevin/0_projet_satisfaction_client/10_Streamlit/interpretabilite.png")
+                image = Image.open("interpretabilite.png")
                 st.image(image, use_column_width=True,width =300)
             with row4_spacer2:        
-                image = Image.open(r"C:/Users/kevin/0_projet_satisfaction_client/10_Streamlit/nuage_bon.png")
+                image = Image.open("nuage_bon.png")
                 st.image(image, use_column_width=True, width =300)      
-                image = Image.open(r"C:/Users/kevin/0_projet_satisfaction_client/10_Streamlit/nuage_mauvais.png")
+                image = Image.open("nuage_mauvais.png")
                 st.image(image, use_column_width=True,width =300)          
             
     
