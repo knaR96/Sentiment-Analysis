@@ -70,10 +70,10 @@ table_score = table_score.astype("str")
 #importation des modèles 
 
 import joblib
-pipe_tfidf_lr = joblib.load(r"C:/Users/kevin/0_projet_satisfaction_client/10_Streamlit/code_pour_streamlit/joblib_file/pipe_tfidf_lr_.pkl")
-pipe_tfidf_MNB = joblib.load(r"C:/Users/kevin/0_projet_satisfaction_client/10_Streamlit/code_pour_streamlit/joblib_file/pipe_tfidf_MNB_.pkl")
-pipe_BOW_MNB = joblib.load(r"C:/Users/kevin/0_projet_satisfaction_client/10_Streamlit/code_pour_streamlit/joblib_file/pipe_BOW_MNB.pkl")
-pipe_w2v_lr = joblib.load(r"C:/Users/kevin/0_projet_satisfaction_client/10_Streamlit/code_pour_streamlit/joblib_file/pipe_w2v_lr.pkl")
+pipe_tfidf_lr = joblib.load("pipe_tfidf_lr_.pkl")
+pipe_tfidf_MNB = joblib.load("pipe_tfidf_MNB_.pkl")
+pipe_BOW_MNB = joblib.load("pipe_BOW_MNB.pkl")
+pipe_w2v_lr = joblib.load("pipe_w2v_lr.pkl")
 
 def prediction_tfidf_lr(comment):
     results = pipe_tfidf_lr.predict([comment])
