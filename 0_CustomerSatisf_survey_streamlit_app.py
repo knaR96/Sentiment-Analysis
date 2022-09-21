@@ -59,7 +59,7 @@ def load_lottieurl(url : str):
 
 
 ################
-df = pd.read_csv("/Users/kevin/0_projet_satisfaction_client/10_Streamlit/reviews_trust.csv")
+df = pd.read_csv("reviews_trust.csv")
 best_models = pd.read_excel(r'C:\Users\kevin\0_projet_satisfaction_client\10_Streamlit\best_models.xlsx')
 best_models = best_models.set_index(["MODELES"])  
 #Import tableau résultats
