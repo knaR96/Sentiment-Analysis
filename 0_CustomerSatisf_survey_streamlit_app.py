@@ -63,7 +63,7 @@ df = pd.read_csv("reviews_trust.csv")
 best_models = pd.read_excel('best_models.xlsx')
 best_models = best_models.set_index(["MODELES"])  
 #Import tableau résultats
-table_score= pd.read_excel(r'C:\Users\kevin\0_projet_satisfaction_client\10_Streamlit\table_score.xlsx')
+table_score= pd.read_excel('table_score.xlsx')
 table_score = table_score.astype("str")
 
 #####################################################
